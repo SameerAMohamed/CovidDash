@@ -1,8 +1,8 @@
 import pandas as pd
-import plotly.express as px  # (version 4.7.0)
+import plotly.express as px
 import plotly.graph_objects as go
 
-import dash  # (version 1.12.0) pip install dash
+import dash
 import dash_core_components as dcc
 import dash_html_components as html
 from dash.dependencies import Input, Output
@@ -20,14 +20,13 @@ df_refined.reset_index(inplace=True)  # Reset index for alignment
 
 # Create a dataframe of all the countries
 name_arr = df_refined.location.unique()  # Make an array out of the names
-op = dict(zip(name_arr, name_arr))  # Make a dictionary out of the array
 
 # Now for app layout
 app.layout = html.Div([
 
     html.H1("Web Application Dashboards with Dash", style={'text-align': 'center'}),  # title for the webpage header
 
-    dcc.Dropdown(
+    dcc.Dropdown(  # First button for the country selection
         id="country_input",
         options=[{'label': x, 'value': x} for x in name_arr],
         value='',
@@ -35,7 +34,7 @@ app.layout = html.Div([
         searchable=True,
         multi=True
     ),
-    dcc.Dropdown(
+    dcc.Dropdown(  # Second button for the metric selection
         id="metric_input",
         options=[{'label': 'Total Cases', 'value': 'total_cases'},
                  {'label': 'New Cases', 'value': 'new_cases'},
