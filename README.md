@@ -11,6 +11,8 @@ COVID Dashboard with Dash (a work in progress)
 
 4)Add more metrics
 
+5)Use a script to update data with most up-to-date CSV. Potentially use Beautiful Soup?
+
 ## To run simply run main.py and follow the link in the console to open in browser
 
 ## How it works
